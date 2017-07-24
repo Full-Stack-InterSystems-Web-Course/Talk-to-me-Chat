@@ -5,25 +5,36 @@
     <title>Web Socket - connection with test websocket</title>
         <script>
         	var wsUri = 'ws://echo.websocket.org';
-            
-            var ws = new WebSocket(wsUri);
-            console.log("trying to connect to webSocket server");
-                       
-            ws.onopen = function(event) {
-                console.log("we are connected to ECHO websocket server, the data from it: " + event.data);
-                console.log("we send the messege to ECHO websocket server: Hello Web Socket!");
-                ws.send("Hello Web Socket!");
-            };
+        	
+        	if ('WebSocket' in window)
+        	{
+	           	 console.log("the browser supports webSockets");
+	        	
+	             var ws = new WebSocket(wsUri);
+                 console.log("trying to connect to webSocket server");
+                 
+                 ws.onopen = function(event) {
+                    console.log("we are connected to ECHO websocket server, the data from it: " + event.data);
+                    console.log("we send the messege to ECHO websocket server: Hello Web Socket!");
+                    ws.send("Hello Web Socket!");
+           		 };
 
-            ws.onmessage = function(event) {
-                console.log("we've got the messege from ECHO websocket server, data: " + event.data);
-        		console.log("we send request to close connection");
-        		 ws.close();
-            };
+                 ws.onmessage = function(event) {
+                    console.log("we've got the messege from ECHO websocket server, data: " + event.data);
+        		    console.log("we send request to close connection");
+        		    ws.close();
+                 };
 
-            ws.onclose = function(event) {
-                console.log("connection is closed, data: " + event.data);
-            };
+                 ws.onclose = function(event) {
+                    console.log("connection is closed, data: " + event.data);
+                 };
+                 
+                 ws.onerror = function(error) {
+					console.log("Error: " + error.message + ".");
+				};
+                 
+         	} else console.log("the browser does not support webSockets");
+             
         </script>
     </head>
     <body>
