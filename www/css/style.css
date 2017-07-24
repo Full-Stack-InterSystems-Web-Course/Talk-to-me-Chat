@@ -1,0 +1,37 @@
+body{
+    color: #8A338A;
+}
+img{
+    max-width: 100%;
+}
+.msg-box {
+    padding-bottom: 50px;
+}
+#msg-input-box{
+    bottom: 0;
+    height: 50px;
+    position: fixed;
+    width:100%;
+}
+
+#msg-input {
+    color:#8A338A;
+}
+
+.text {
+    background-color: #DBC0DB;
+    border-color: #AC68AC;
+    color: #8A338A;
+}
+
+.text:before, .text:after {
+    content: " ";
+}
+
+.headline {
+    font-size: 0.875rem;
+}
+
+.name {
+    font-weight: bold;
+}
