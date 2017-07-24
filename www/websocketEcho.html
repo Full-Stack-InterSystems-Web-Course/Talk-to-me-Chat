@@ -5,7 +5,9 @@
     <title>Web Socket - connection with test websocket</title>
         <script>
         	var wsUri = 'ws://echo.websocket.org';
+        	//var wsUri = 'ws://localhost:57772/chattalktome/talk2me.web.websocketEcho.cls';
         	
+        	console.log("wsUri = " + wsUri);
         	if ('WebSocket' in window)
         	{
 	           	 console.log("the browser supports webSockets");
