@@ -1,3 +1,4 @@
+/// http://localhost:57772/csp/docbook/DocBook.UI.Page.cls?KEY=GCGI_oper_config#GCGI_websockets
 Class talk2me.web.websocketEcho2 Extends %CSP.WebSocket
 {
 
